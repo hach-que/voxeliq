@@ -13,7 +13,7 @@
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
     <XnaPlatform>Windows</XnaPlatform>
-    <XnaProfile>Reach</XnaProfile>
+    <XnaProfile>HiDef</XnaProfile>
     <XnaCrossPlatformGroupID>696a1687-6361-40bf-94dd-3e3a8cab37d4</XnaCrossPlatformGroupID>
     <XnaOutputType>Library</XnaOutputType>
   </PropertyGroup>
@@ -44,7 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework.Windows">
-      <HintPath>..\..\dep\monogame\windows\MonoGame.Framework.Windows.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\MonoGame\v3.0\Assemblies\MonoGame.Framework.Windows.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="Nini">
@@ -125,12 +125,15 @@
     <Compile Include="Utils\Vector\Vector3Int.cs" />
     <Compile Include="Utils\Vector\Vector4Byte.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Content\Content.Windows.XNA.contentproj">
+      <Project>{A84C78DB-8FB9-4B18-906C-64F60A5FA948}</Project>
+      <Name>Content.Windows.MonoGame %28Content%29</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
   <!--
       To modify your build process, add your task inside one of the targets below and uncomment it. 
       Other similar extension points exist, see Microsoft.Common.targets.
